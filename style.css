@@ -15,7 +15,7 @@ pre{
     border-radius: 0.5em;
 }*/
 
-#display{
+.display{
     overflow-wrap: break-word;
     word-wrap: break-word;
     background-color: #25142d;

@@ -24,12 +24,14 @@ var PiCalculatorLeibniz = function(n){
         
         sum4 = sum.multiply(new Frac(4n,1n));
         var pi = sum4.getDecimal(N);
-        document.getElementById("display").innerHTML = pi;
+        document.getElementById("display").innerHTML = "π = "+pi;
         i++;
         if(i > N*N*10){
             i = -1;
         }
     };
+    var that = this;
+    this.res = ()=>{};
     var terminate = false;
     var animate = function(t){
         t /= 1000;
@@ -38,6 +40,9 @@ var PiCalculatorLeibniz = function(n){
         start = t;
         if(i >= 0){
             step();
+        }else{
+            that.res();
+            that.res = ()=>{};
         }
         if(!terminate)requestAnimationFrame(animate);
     };
@@ -45,13 +50,17 @@ var PiCalculatorLeibniz = function(n){
     
     this.terminate = function(){
         terminate = true;
+        that.res();
     };
     
     this.startCalculation = function(n){
         sum = new Frac(0n,1n);
         i = 0;
         N = n;
-    }
+        return new Promise((res,rej)=>{
+            that.res = res;
+        });
+    };
 };
 
 var PiCalculatorNilakantha = function(n){
@@ -78,12 +87,14 @@ var PiCalculatorNilakantha = function(n){
         
         sum4 = sum.multiply(new Frac(4n,1n));
         var pi = sum4.getDecimal(N);
-        document.getElementById("display").innerHTML = pi;
+        document.getElementById("display").innerHTML = "π = "+pi;
         i++;
         if(i > N*N*2){
             i = -1;
         }
     };
+    var that = this;
+    this.res = ()=>{};
     var terminate = false;
     var animate = function(t){
         t /= 1000;
@@ -92,6 +103,9 @@ var PiCalculatorNilakantha = function(n){
         start = t;
         if(i >= 0){
             step();
+        }else{
+            that.res();
+            that.res = ()=>{};
         }
         if(!terminate)requestAnimationFrame(animate);
     };
@@ -99,13 +113,17 @@ var PiCalculatorNilakantha = function(n){
     
     this.terminate = function(){
         terminate = true;
+        that.res();
     };
     
     this.startCalculation = function(n){
         sum = new Frac(3n,4n);
         i = 0;
         N = n;
-    }
+        return new Promise((res,rej)=>{
+            that.res = res;
+        });
+    };
 };
 
 
@@ -151,6 +169,8 @@ var PiCalculatorNilakantha2 = function(n){
             i = -1;
         }
     };
+    var that = this;
+    this.res = ()=>{};
     var terminate = false;
     var animate = function(t){
         t /= 1000;
@@ -159,6 +179,9 @@ var PiCalculatorNilakantha2 = function(n){
         start = t;
         if(i >= 0){
             step();
+        }else{
+            that.res();
+            that.res = ()=>{};
         }
         if(!terminate)requestAnimationFrame(animate);
     };
@@ -166,13 +189,17 @@ var PiCalculatorNilakantha2 = function(n){
     
     this.terminate = function(){
         terminate = true;
+        that.res();
     };
     
     this.startCalculation = function(n){
         sum = new Frac(3n,2n);
         i = 0;
         N = n;
-    }
+        return new Promise((res,rej)=>{
+            that.res = res;
+        });
+    };
 };
 
 
@@ -204,13 +231,15 @@ var PiCalculatorNilakantha3 = function(n){
         
         
         var pi = sum.getDecimal(N);
-        document.getElementById("display").innerHTML = pi;
+        document.getElementById("display").innerHTML = "π = "+pi;
         
         i++;
         if(i > N*3.2){
             i = -1;
         }
     };
+    var that = this;
+    this.res = ()=>{};
     var terminate = false;
     var animate = function(t){
         t /= 1000;
@@ -219,6 +248,9 @@ var PiCalculatorNilakantha3 = function(n){
         start = t;
         if(i >= 0){
             step();
+        }else{
+            that.res();
+            that.res = ()=>{};
         }
         if(!terminate)requestAnimationFrame(animate);
     };
@@ -226,13 +258,17 @@ var PiCalculatorNilakantha3 = function(n){
     
     this.terminate = function(){
         terminate = true;
+        that.res();
     };
     
     this.startCalculation = function(n){
-        var sum = new Frac(0n,1n);
+        sum = new Frac(0n,1n);
         i = 0;
         N = n;
-    }
+        return new Promise((res,rej)=>{
+            that.res = res;
+        });
+    };
 };
 
 var PiCalculatorAtanKikuo = function(n){
@@ -268,12 +304,14 @@ var PiCalculatorAtanKikuo = function(n){
         
         sum4 = sum.multiply(new Frac(4n,1n));
         var pi = sum4.getDecimal(N);
-        document.getElementById("display").innerHTML = pi;
+        document.getElementById("display").innerHTML = "π = "+pi;
         i++;
         if(i > N*0.3){
             i = -1;
         }
     };
+    var that = this;
+    this.res = ()=>{};
     var terminate = false;
     var animate = function(t){
         t /= 1000;
@@ -282,6 +320,9 @@ var PiCalculatorAtanKikuo = function(n){
         start = t;
         if(i >= 0){
             step();
+        }else{
+            that.res();
+            that.res = ()=>{};
         }
         if(!terminate)requestAnimationFrame(animate);
     };
@@ -289,13 +330,17 @@ var PiCalculatorAtanKikuo = function(n){
     
     this.terminate = function(){
         terminate = true;
+        that.res();
     };
     
     this.startCalculation = function(n){
         sum = new Frac(0n,1n);
         i = 0;
         N = n;
-    }
+        return new Promise((res,rej)=>{
+            that.res = res;
+        });
+    };
 };
 
 var PiCalculatorAtanStormer = function(n){
@@ -331,12 +376,14 @@ var PiCalculatorAtanStormer = function(n){
         
         sum4 = sum.multiply(new Frac(4n,1n));
         var pi = sum4.getDecimal(N);
-        document.getElementById("display").innerHTML = pi;
+        document.getElementById("display").innerHTML = "π = "+pi;
         i++;
         if(i > N*0.28){
             i = -1;
         }
     };
+    var that = this;
+    this.res = ()=>{};
     var terminate = false;
     var animate = function(t){
         t /= 1000;
@@ -345,6 +392,9 @@ var PiCalculatorAtanStormer = function(n){
         start = t;
         if(i >= 0){
             step();
+        }else{
+            that.res();
+            that.res = ()=>{};
         }
         if(!terminate)requestAnimationFrame(animate);
     };
@@ -352,13 +402,17 @@ var PiCalculatorAtanStormer = function(n){
     
     this.terminate = function(){
         terminate = true;
+        that.res();
     };
     
     this.startCalculation = function(n){
         sum = new Frac(0n,1n);
         i = 0;
         N = n;
-    }
+        return new Promise((res,rej)=>{
+            that.res = res;
+        });
+    };
 };
 
 
@@ -403,12 +457,14 @@ var PiCalculatorAtanHwang = function(n){
         
         sum4 = sum.multiply(new Frac(4n,1n));
         var pi = sum4.getDecimal(N);
-        document.getElementById("display").innerHTML = pi;
+        document.getElementById("display").innerHTML = "π = "+pi;
         i++;
         if(i > N*0.09){
             i = -1;
         }
     };
+    var that = this;
+    this.res = ()=>{};
     var terminate = false;
     var animate = function(t){
         t /= 1000;
@@ -417,6 +473,9 @@ var PiCalculatorAtanHwang = function(n){
         start = t;
         if(i >= 0){
             step();
+        }else{
+            that.res();
+            that.res = ()=>{};
         }
         if(!terminate)requestAnimationFrame(animate);
     };
@@ -424,11 +483,15 @@ var PiCalculatorAtanHwang = function(n){
     
     this.terminate = function(){
         terminate = true;
+        that.res();
     };
     
     this.startCalculation = function(n){
         sum = new Frac(0n,1n);
         i = 0;
         N = n;
-    }
+        return new Promise((res,rej)=>{
+            that.res = res;
+        });
+    };
 };
